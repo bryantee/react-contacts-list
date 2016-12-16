@@ -1,13 +1,15 @@
 require('babel-polyfill');
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Router, Route, hashHistory} from 'react-router'
-
-import ContactListContiner from './components/list-container'
+import {Router, Route, IndexRoute, hashHistory} from 'react-router'
+import ContactListContainer from './components/list-container'
+import App from './components/app'
 
 const routes = (
   <Router history={hashHistory}>
-    <Route path='/contacts' component={ContactListContiner} />
+    <Route path='/contacts' component={App}>
+      <IndexRoute component={ContactListContainer} />
+    </Route>
   </Router>
 );
 
